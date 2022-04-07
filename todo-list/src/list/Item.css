@@ -1,0 +1,8 @@
+.Item {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.Item.active {
+    text-decoration: line-through;
+}
