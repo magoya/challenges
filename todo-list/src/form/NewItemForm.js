@@ -1,15 +1,14 @@
-import React, { useState } from 'react';
-import Button from './Button'
-import TextInput from './TextInput';
+import Button from "./Button";
+import TextInput from "./TextInput";
 
-function NewItemForm(props) {
+const NewItemForm = ({ handleSubmit, handleTextChange }) => {
   return (
     <div className="NewItemForm">
       <h4>Create new Item</h4>
-      <Button label="New Item" onClick={props.handleSubmit}/>
-      <TextInput label="Input the item name" onChange={props.handleTextChange} />
+      <Button label="New Item" onClick={handleSubmit} />
+      <TextInput label="Input the item name" onChange={handleTextChange} />
     </div>
   );
-}
+};
 
-export default NewItemForm
+export default NewItemForm;
