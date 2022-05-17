@@ -1,15 +1,17 @@
-import { useState } from 'react';
-import './TextInput.css'
+import { useState, useEffect } from "react";
 
-function TextInput(props) {
-  const [value, setValue] = useState('')
+const TextInput = ({ label, onChange }) => {
+  const [value, setValue] = useState("");
+
+  useEffect(() => {
+    onChange(value);
+  }, [onChange, value]);
+
   const handleChange = (e) => {
-    setValue(e.target.value)
-    props.onChange(value)
-  }
-  return (
-    <input type="text" name="props.name" value={value} placeholder={props.label} onChange={handleChange}/>
-  );
-}
+    setValue(e.target.value);
+    onChange(value);
+  };
+  return <input type="text" placeholder={label} onChange={handleChange} />;
+};
 
-export default TextInput
+export default TextInput;

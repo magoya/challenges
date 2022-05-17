@@ -1,13 +1,12 @@
-import './List.css';
-import Item from './Item'
+import Item from "./Item";
+import "./List.css";
 
-function List(props) {
-  
-  return (
-    <ul className="List">
-        { props.items.map(item => <Item label={item}/>)}
-    </ul>
-  );
-}
+const List = ({ items }) => (
+  <ul className="List">
+    {items.map((item, index) => (
+      <Item label={item} key={`list_item_${index}`} />
+    ))}
+  </ul>
+);
 
 export default List;
